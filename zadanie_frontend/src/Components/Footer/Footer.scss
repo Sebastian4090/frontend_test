@@ -1,0 +1,176 @@
+@keyframes slideUp {
+  0% {
+    bottom: -1.2rem;
+  }
+  100% {
+    bottom: 4rem;
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 7.2rem;
+  background-color: #15161a;
+  box-shadow: 0px -1px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  &__CSS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-left: 20px;
+
+    p {
+      font-family: Arial;
+      color: rgba(255, 255, 255, 10%);
+      z-index: 2;
+      user-select: none;
+      position: relative;
+      pointer-events: none;
+      font-size: 18px;
+      margin-left: 7px;
+    }
+    .footer__box {
+      border: 1px solid rgba(255, 255, 255, 10%);
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      z-index: 1;
+      margin-left: -1.25em;
+      cursor: pointer;
+
+      &:hover {
+        border-color: #b18c5f;
+        transition-duration: 1000ms;
+        transition-property: transform;
+        transform: rotate(360deg);
+
+        & + p {
+          color: #a3a6b5;
+        }
+      }
+    }
+  }
+
+  .footer__label {
+    height: 2.5em;
+    border-radius: 0.1em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    width: 68%;
+    max-width: 275px;
+    margin-right: 1em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .label__button {
+      position: absolute;
+      appearance: none;
+      font-size: 1.3em;
+      width: 100%;
+      height: 100%;
+      border: solid 1px rgba(255, 255, 255, 10%);
+      color: #a3a6b5;
+      user-select: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:checked {
+        border-color: white;
+
+        & + legend,
+        & + legend::after {
+          color: white;
+          border-color: white;
+        }
+
+        & ~ .footer__form {
+          display: flex;
+          flex-direction: column;
+          top: auto;
+          animation: slideUp 500ms ease-in-out forwards;
+        }
+      }
+    }
+
+    legend {
+      color: #a3a6b5;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        border-left: 2px solid #a3a6b5;
+        border-bottom: 2px solid #a3a6b5;
+        transform: rotate(135deg);
+        margin-left: 16px;
+        position: relative;
+      }
+    }
+
+    .footer__form {
+      display: none;
+      background-color: white;
+      cursor: auto;
+      position: absolute;
+      width: 95%;
+      height: 5rem;
+      right: 0;
+      top: 0;
+      box-shadow: 0 0 1rem black;
+      bottom: 200px;
+      transform: translateY(-10px);
+      z-index: -1;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      padding: 0.3rem;
+      padding-top: 0.6rem;
+
+      .form__button {
+        border-style: none;
+        font-size: 0.9em;
+        font-weight: 500;
+        background-color: transparent;
+        user-select: none;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 7px;
+          height: 7px;
+          border-left: 2px solid black;
+          border-bottom: 2px solid black;
+          transform: rotate(222deg);
+          margin-left: 16px;
+          position: relative;
+          margin-right: 10px;
+        }
+
+        &:hover {
+          color: #d68625;
+          cursor: pointer;
+
+          &::before {
+            border-color: #d68625;
+          }
+        }
+      }
+    }
+  }
+}

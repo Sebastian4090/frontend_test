@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+$black: #2a2d36;
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  background-color: $black;
+  margin: 0px;
+}
