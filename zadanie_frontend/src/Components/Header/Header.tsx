@@ -5,9 +5,6 @@ type header_type = {
 };
 
 const Header = ({ showData }: header_type) => {
-  if (showData) {
-    console.log("dziala");
-  }
   return (
     <header className="header">
       <a className="header__logo" href="/">

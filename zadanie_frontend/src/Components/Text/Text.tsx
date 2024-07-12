@@ -1,14 +1,20 @@
 import "./Text.scss";
 
-const Text: React.FC = () => {
+type text_types = {
+  fruitText: string[];
+};
+
+const Text = ({ fruitText }: text_types) => {
   return (
     <section className="text">
-      <legend>BLOK Z DŁUGA NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE ...</legend>
+      <legend>
+        BLOK Z DŁUGA NAZWĄ KTÓRA SAMA SIĘ PRZYTNIE BLOK Z DŁUGA NAZWĄ KTÓRA SAMA
+        SIĘ PRZYTNIE
+      </legend>
       <article className="text__article">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit at
-        nesciunt ipsum, neque quaerat deleniti rem delectus libero temporibus
-        nihil iste autem asperiores dolores necessitatibus unde provident quos
-        voluptatibus. Delectus?
+        {fruitText.map((text, id) => (
+          <p key={id}>{text}</p>
+        ))}
       </article>
     </section>
   );

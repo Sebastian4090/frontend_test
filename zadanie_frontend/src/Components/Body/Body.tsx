@@ -1,10 +1,23 @@
 import Buttons from "../Buttons/Buttons";
 import Radio from "../Radio/Radio";
 import Text from "../Text/Text";
+import { Dispatch, SetStateAction } from "react";
 
 import "./Body.scss";
 
-const Body: React.FC = () => {
+type body_types = {
+  setRadioOption: Dispatch<SetStateAction<string>>;
+  fruitText: string[];
+  replaceText: () => void;
+  appendText: () => void;
+};
+
+const Body: React.FC<body_types> = ({
+  setRadioOption,
+  fruitText,
+  replaceText,
+  appendText,
+}) => {
   return (
     <main className="main">
       <div>
@@ -12,9 +25,9 @@ const Body: React.FC = () => {
         <hr />
       </div>
       <section className="section">
-        <Radio />
-        <Buttons />
-        <Text />
+        <Radio setRadioOption={setRadioOption} />
+        <Buttons replaceText={replaceText} appendText={appendText} />
+        <Text fruitText={fruitText} />
       </section>
     </main>
   );
