@@ -68,8 +68,10 @@
     legend {
       grid-column: 1 / span 2;
       text-align: center;
-      float: none;
+      // float: none;
+      grid-row: 1;
       padding-top: 0.3em;
+      margin-bottom: 2em;
     }
 
     button {
@@ -92,7 +94,7 @@
       width: 72%;
       height: 2.8em;
       font-size: 1.2em;
-      grid-row: 1;
+      grid-row: 2;
     }
     #append {
       grid-column: 3 / span 4;
