@@ -1,19 +1,23 @@
+@import "../../Style/media.scss";
+
 .main {
   margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  pointer-events: none;
 
   h1 {
     text-align: center;
     color: white;
     font-weight: 400;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
   }
 
   hr {
     width: 75%;
     margin-top: 0;
+    margin-bottom: -0.2em;
   }
 
   .section {
@@ -22,5 +26,35 @@
     grid-template-rows: 1fr 2fr;
     width: 95%;
     margin-top: 2em;
+  }
+}
+
+@media (min-width: $mobile) {
+  .main h1 {
+    margin-bottom: 0.5em;
+  }
+
+  .main hr {
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: $desktop) {
+  .main .section {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+@media (min-width: $computer) {
+  .main {
+    h1 {
+      margin-top: 1.5em;
+      font-size: 3em;
+    }
+    hr {
+      margin-top: -0.5em;
+      margin-bottom: 2.8em;
+    }
   }
 }

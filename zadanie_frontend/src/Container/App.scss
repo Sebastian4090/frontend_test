@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-
-$black: #2a2d36;
+@import "../Style/colors.scss";
+@import "../Style/media.scss";
 
 :root {
   font-family: "Open Sans", sans-serif;
@@ -8,6 +8,15 @@ $black: #2a2d36;
 }
 
 body {
-  background-color: $black;
+  background-color: $app--black;
   margin: 0px;
+  position: relative;
+  min-height: 100vh;
+  pointer-events: none;
+}
+
+@media (min-width: $computer) {
+  body {
+    min-height: 88vh;
+  }
 }

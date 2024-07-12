@@ -1,3 +1,6 @@
+@import "../../Style/colors.scss";
+@import "../../Style/media.scss";
+
 .Buttons {
   outline: none;
   list-style: none;
@@ -7,33 +10,93 @@
   align-items: flex-end;
   color: white;
   gap: 1em;
+  pointer-events: auto;
 
   legend {
     font-weight: 700;
-    margin-bottom: 1em;
     font-size: 1.25em;
     text-align: end;
-    width: 100%;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
+    float: left;
   }
 
   button {
     font-size: 1.25em;
     background-color: transparent;
-    width: 68%;
+    width: 90%;
     max-width: 200px;
     height: 2.5em;
     border-radius: 0.1em;
     border: solid 1px white;
-    color: rgba(255, 255, 255, 60%);
+    color: $button--gray;
     font-weight: 700;
     letter-spacing: -0.03em;
     font-size: 1.1em;
 
     &:hover {
-      background: linear-gradient(90deg, #cd7400, #fe9e23);
+      background: linear-gradient(
+        90deg,
+        $button--gradient_start,
+        $button--gradient_end
+      );
       cursor: pointer;
       color: white;
+    }
+  }
+}
+
+@media (min-width: $mobile) {
+  .Buttons {
+    button {
+      width: 68%;
+    }
+
+    legend {
+      margin-bottom: 0.7em;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .Buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: start;
+    justify-items: center;
+
+    legend {
+      grid-column: 1 / span 2;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $computer) {
+  .Buttons {
+    gap: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+
+    legend {
+      font-size: 1.6em;
+      grid-column: 1 / span 4;
+    }
+    button {
+      width: 72%;
+      height: 2.8em;
+      font-size: 1.2em;
+      grid-row: 2 / span 3;
+    }
+    #append {
+      grid-column: 3 / span 4;
+    }
+    #replace {
+      grid-column: 1 / span 2;
     }
   }
 }
