@@ -41,7 +41,7 @@
 
 @media (min-width: $desktop) {
   .main .section {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr minmax(0, 1fr);
     grid-template-rows: 1fr;
   }
 }

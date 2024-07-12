@@ -1,11 +1,12 @@
 import "./Footer.scss";
-import { Dispatch } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 type footer_types = {
-  setShowData: Dispatch<React.SetStateAction<boolean>>;
+  setShowData: Dispatch<SetStateAction<boolean>>;
+  resetText: Dispatch<SetStateAction<string[]>>;
 };
 
-const Footer = ({ setShowData }: footer_types) => {
+const Footer = ({ setShowData, resetText }: footer_types) => {
   return (
     <footer className="footer">
       <div className="footer__CSS">
@@ -28,7 +29,10 @@ const Footer = ({ setShowData }: footer_types) => {
           <button
             className="form__button"
             id="reset"
-            onClick={() => console.log()}
+            onClick={() => {
+              setShowData(false);
+              resetText([]);
+            }}
           >
             ZRESETUJ USTAWIENIA
           </button>
