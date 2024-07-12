@@ -25,7 +25,7 @@ const Footer = ({ setShowData, resetText }: footer_types) => {
       <div className="footer__label">
         <input type="checkbox" className="label__button" />
         <legend>POKAŻ</legend>
-        <label className="footer__form">
+        <div className="footer__form">
           <button
             className="form__button"
             id="reset"
@@ -43,7 +43,7 @@ const Footer = ({ setShowData, resetText }: footer_types) => {
           >
             POKAŻ DANE OSOBOWE
           </button>
-        </label>
+        </div>
       </div>
     </footer>
   );
