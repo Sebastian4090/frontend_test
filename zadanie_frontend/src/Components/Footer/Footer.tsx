@@ -1,6 +1,11 @@
 import "./Footer.scss";
+import { Dispatch } from "react";
 
-const Footer: React.FC = () => {
+type footer_types = {
+  setShowData: Dispatch<React.SetStateAction<boolean>>;
+};
+
+const Footer = ({ setShowData }: footer_types) => {
   return (
     <footer className="footer">
       <div className="footer__CSS">
@@ -16,10 +21,10 @@ const Footer: React.FC = () => {
       <div className="footer__watermark">
         <p></p>
       </div>
-      <label className="footer__label">
+      <div className="footer__label">
         <input type="checkbox" className="label__button" />
         <legend>POKAŻ</legend>
-        <form className="footer__form">
+        <label className="footer__form">
           <button
             className="form__button"
             id="reset"
@@ -30,12 +35,12 @@ const Footer: React.FC = () => {
           <button
             className="form__button"
             id="showData"
-            onClick={() => console.log("shows data")}
+            onClick={() => setShowData(true)}
           >
             POKAŻ DANE OSOBOWE
           </button>
-        </form>
-      </label>
+        </label>
+      </div>
     </footer>
   );
 };

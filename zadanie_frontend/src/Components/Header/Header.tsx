@@ -1,6 +1,13 @@
 import "./Header.scss";
 
-const Header: React.FC = () => {
+type header_type = {
+  showData: boolean;
+};
+
+const Header = ({ showData }: header_type) => {
+  if (showData) {
+    console.log("dziala");
+  }
   return (
     <header className="header">
       <a className="header__logo" href="/">
@@ -11,6 +18,12 @@ const Header: React.FC = () => {
       </a>
       <p className="header__text">
         Zadanie <strong>rekrutacyjne</strong>
+        {showData ? (
+          <>
+            <br />
+            Sebastian Bober
+          </>
+        ) : null}
       </p>
     </header>
   );
